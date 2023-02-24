@@ -31,7 +31,7 @@ const FooterForm: React.FC = () => {
       console.log(error.message);
     } finally {
       setIsLoading(false);
-      // reset();
+      reset();
     }
   };
 
