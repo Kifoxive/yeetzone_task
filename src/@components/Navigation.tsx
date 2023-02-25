@@ -16,7 +16,7 @@ const Navigation: React.FC = () => {
         </Link>
       </div>
       <div>
-        <ul className="hidden sm:flex px-4">
+        <ul className="hidden md:flex px-4">
           <li
             className={`${styles.paragraph} ${
               pathname === "/" && "bg-green-400 text-[#138958]"
@@ -54,7 +54,7 @@ const Navigation: React.FC = () => {
             </Link>
           </li>
         </ul>
-        <div className="block relative sm:hidden p-4">
+        <div className="block relative md:hidden p-4">
           <button
             onClick={() => setShowMenu(true)}
             style={{
@@ -65,7 +65,7 @@ const Navigation: React.FC = () => {
           <div
             className={`${
               showMenu ? "flex" : "hidden"
-            } absolute sm:hidden flex-col items-end top-0 right-0 bg-[#28d28c]`}
+            } absolute flex-col items-end top-0 right-0 bg-[#28d28c] shadow-lg`}
           >
             <div className="p-4">
               <button
@@ -76,34 +76,50 @@ const Navigation: React.FC = () => {
                 className="h-[30px] w-[30px]"
               />
             </div>
-            <ul className={`flex-col`}>
-              <li
-                className={`text-black text-[2rem] ${
-                  pathname === "/" && "bg-green-400 "
-                } ml-2 px-10 py-4 uppercase mt-2`}
-              >
-                <Link to="/">home</Link>
+            <ul className="flex flex-col">
+              <li className="mt-2">
+                <Link
+                  onClick={() => setShowMenu(false)}
+                  className={`text-white text-[1.6rem] ${
+                    pathname === "/" && "bg-green-400 "
+                  } px-16 py-4 block uppercase`}
+                  to="/"
+                >
+                  home
+                </Link>
               </li>
-              <li
-                className={`text-black text-[2rem] ${
-                  pathname === "/about" && "bg-green-400 "
-                } ml-2 px-10 py-4 uppercase mt-2`}
-              >
-                <Link to="/about">about</Link>
+              <li className="mt-2">
+                <Link
+                  onClick={() => setShowMenu(false)}
+                  className={`text-white text-[1.6rem] ${
+                    pathname === "/about" && "bg-green-400 "
+                  } px-16 py-4 block uppercase`}
+                  to="/about"
+                >
+                  about
+                </Link>
               </li>
-              <li
-                className={`text-black text-[2rem]  ${
-                  pathname === "/career" && "bg-green-400 "
-                } ml-2 px-10 py-4 uppercase mt-2`}
-              >
-                <Link to="/career">career</Link>
+              <li className="mt-2">
+                <Link
+                  onClick={() => setShowMenu(false)}
+                  className={`text-white text-[1.6rem] ${
+                    pathname === "/career" && "bg-green-400 "
+                  } px-16 py-4 block uppercase`}
+                  to="/career"
+                >
+                  career
+                </Link>
               </li>
-              <li
-                className={`text-black text-[2rem]  ${
-                  pathname === "/contact" && "bg-green-400 "
-                } ml-2 px-10 py-4 uppercase mt-2`}
-              >
-                <Link to="/contact">contact</Link>
+              <li className="mt-2">
+                <Link
+                  onClick={() => setShowMenu(false)}
+                  className={`text-white text-[1.6rem] ${
+                    pathname === "/contact" && "bg-green-400 "
+                  } px-16 py-4 block uppercase`}
+                  to="/contact"
+                >
+                  contact
+                </Link>
               </li>
             </ul>
           </div>
